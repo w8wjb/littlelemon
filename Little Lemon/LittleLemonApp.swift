@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct LittleLemonApp: App {
+    
+    @AppStorage(kCustomerOnboarded) private var customerOnboarded: Bool = false;
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        WindowGroup {            
+            if customerOnboarded {
+                RootContentView()
+            } else {
+                Onboarding()
+            }
         }
     }
 }
