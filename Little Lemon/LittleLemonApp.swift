@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct LittleLemonApp: App {
     
+    let persistence = PersistenceController.shared
+
+    
     @AppStorage(kCustomerOnboarded) private var customerOnboarded: Bool = false;
     
     var body: some Scene {
@@ -19,6 +22,6 @@ struct LittleLemonApp: App {
             } else {
                 Onboarding()
             }
-        }
+        }.environment(\.managedObjectContext, persistence.container.viewContext)
     }
 }

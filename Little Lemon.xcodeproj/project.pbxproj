@@ -19,6 +19,35 @@
 		AD30F1F82C5891980063BA5A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F1F72C5891980063BA5A /* Home.swift */; };
 		AD30F1FA2C5891CD0063BA5A /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F1F92C5891CD0063BA5A /* Menu.swift */; };
 		AD30F1FC2C5893310063BA5A /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F1FB2C5893310063BA5A /* UserProfile.swift */; };
+		AD30F1FF2C5899370063BA5A /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F1FD2C5899370063BA5A /* Persistence.swift */; };
+		AD30F2002C5899370063BA5A /* FetchedObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F1FE2C5899370063BA5A /* FetchedObjects.swift */; };
+		AD30F2042C5899B20063BA5A /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F2032C5899B20063BA5A /* MenuItem.swift */; };
+		AD30F2072C58A0270063BA5A /* LLData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AD30F2052C58A0270063BA5A /* LLData.xcdatamodeld */; };
+		AD30F20A2C58A22E0063BA5A /* Dish+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F2082C58A22E0063BA5A /* Dish+CoreDataClass.swift */; };
+		AD30F20B2C58A22E0063BA5A /* Dish+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F2092C58A22E0063BA5A /* Dish+CoreDataProperties.swift */; };
+		AD30F20D2C591EDC0063BA5A /* View+PreviewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F20C2C591EDC0063BA5A /* View+PreviewHelper.swift */; };
+		AD30F20F2C593A110063BA5A /* AsyncCachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F20E2C593A110063BA5A /* AsyncCachedImage.swift */; };
+		AD30F2242C593F680063BA5A /* MarkaziText-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2222C593F1D0063BA5A /* MarkaziText-SemiBold.ttf */; };
+		AD30F2252C593F680063BA5A /* Karla-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F21D2C593F110063BA5A /* Karla-Light.ttf */; };
+		AD30F2262C593F680063BA5A /* MarkaziText-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2202C593F1D0063BA5A /* MarkaziText-Medium.ttf */; };
+		AD30F2272C593F680063BA5A /* Karla-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2192C593F110063BA5A /* Karla-BoldItalic.ttf */; };
+		AD30F2282C593F680063BA5A /* Karla-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2162C593F110063BA5A /* Karla-ExtraLight.ttf */; };
+		AD30F2292C593F680063BA5A /* Karla-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2152C593F110063BA5A /* Karla-ExtraLightItalic.ttf */; };
+		AD30F22A2C593F680063BA5A /* Karla-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F21C2C593F110063BA5A /* Karla-Medium.ttf */; };
+		AD30F22B2C593F680063BA5A /* Karla-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2132C593F100063BA5A /* Karla-Bold.ttf */; };
+		AD30F22C2C593F680063BA5A /* Karla-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2182C593F110063BA5A /* Karla-ExtraBold.ttf */; };
+		AD30F22D2C593F680063BA5A /* Karla-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F21A2C593F110063BA5A /* Karla-LightItalic.ttf */; };
+		AD30F22E2C593F680063BA5A /* Karla-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2142C593F100063BA5A /* Karla-MediumItalic.ttf */; };
+		AD30F22F2C593F680063BA5A /* Karla-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2112C593F100063BA5A /* Karla-Regular.ttf */; };
+		AD30F2302C593F680063BA5A /* Karla-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F21B2C593F110063BA5A /* Karla-Italic.ttf */; };
+		AD30F2312C593F680063BA5A /* MarkaziText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F21F2C593F1D0063BA5A /* MarkaziText-Bold.ttf */; };
+		AD30F2322C593F680063BA5A /* Karla-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F21E2C593F110063BA5A /* Karla-SemiBold.ttf */; };
+		AD30F2332C593F680063BA5A /* Karla-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2172C593F110063BA5A /* Karla-ExtraBoldItalic.ttf */; };
+		AD30F2342C593F680063BA5A /* Karla-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2122C593F100063BA5A /* Karla-SemiBoldItalic.ttf */; };
+		AD30F2352C593F680063BA5A /* MarkaziText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD30F2212C593F1D0063BA5A /* MarkaziText-Regular.ttf */; };
+		AD30F2372C59417D0063BA5A /* Font+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F2362C59417D0063BA5A /* Font+Style.swift */; };
+		AD30F23C2C5945760063BA5A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F23B2C5945760063BA5A /* Header.swift */; };
+		AD30F2402C59F6F00063BA5A /* MenuCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD30F23F2C59F6F00063BA5A /* MenuCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +83,36 @@
 		AD30F1F72C5891980063BA5A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		AD30F1F92C5891CD0063BA5A /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		AD30F1FB2C5893310063BA5A /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		AD30F1FD2C5899370063BA5A /* Persistence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		AD30F1FE2C5899370063BA5A /* FetchedObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedObjects.swift; sourceTree = "<group>"; };
+		AD30F2032C5899B20063BA5A /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		AD30F2062C58A0270063BA5A /* LLData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LLData.xcdatamodel; sourceTree = "<group>"; };
+		AD30F2082C58A22E0063BA5A /* Dish+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AD30F2092C58A22E0063BA5A /* Dish+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dish+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AD30F20C2C591EDC0063BA5A /* View+PreviewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PreviewHelper.swift"; sourceTree = "<group>"; };
+		AD30F20E2C593A110063BA5A /* AsyncCachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCachedImage.swift; sourceTree = "<group>"; };
+		AD30F2112C593F100063BA5A /* Karla-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Regular.ttf"; sourceTree = "<group>"; };
+		AD30F2122C593F100063BA5A /* Karla-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		AD30F2132C593F100063BA5A /* Karla-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Bold.ttf"; sourceTree = "<group>"; };
+		AD30F2142C593F100063BA5A /* Karla-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-MediumItalic.ttf"; sourceTree = "<group>"; };
+		AD30F2152C593F110063BA5A /* Karla-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		AD30F2162C593F110063BA5A /* Karla-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraLight.ttf"; sourceTree = "<group>"; };
+		AD30F2172C593F110063BA5A /* Karla-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		AD30F2182C593F110063BA5A /* Karla-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AD30F2192C593F110063BA5A /* Karla-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AD30F21A2C593F110063BA5A /* Karla-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-LightItalic.ttf"; sourceTree = "<group>"; };
+		AD30F21B2C593F110063BA5A /* Karla-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Italic.ttf"; sourceTree = "<group>"; };
+		AD30F21C2C593F110063BA5A /* Karla-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Medium.ttf"; sourceTree = "<group>"; };
+		AD30F21D2C593F110063BA5A /* Karla-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-Light.ttf"; sourceTree = "<group>"; };
+		AD30F21E2C593F110063BA5A /* Karla-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Karla-SemiBold.ttf"; sourceTree = "<group>"; };
+		AD30F21F2C593F1D0063BA5A /* MarkaziText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Bold.ttf"; sourceTree = "<group>"; };
+		AD30F2202C593F1D0063BA5A /* MarkaziText-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Medium.ttf"; sourceTree = "<group>"; };
+		AD30F2212C593F1D0063BA5A /* MarkaziText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-Regular.ttf"; sourceTree = "<group>"; };
+		AD30F2222C593F1D0063BA5A /* MarkaziText-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarkaziText-SemiBold.ttf"; sourceTree = "<group>"; };
+		AD30F2232C593F400063BA5A /* Little-Lemon-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Little-Lemon-Info.plist"; sourceTree = SOURCE_ROOT; };
+		AD30F2362C59417D0063BA5A /* Font+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Style.swift"; sourceTree = "<group>"; };
+		AD30F23B2C5945760063BA5A /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		AD30F23F2C59F6F00063BA5A /* MenuCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +163,9 @@
 		AD30F1C62C583B3F0063BA5A /* Little Lemon */ = {
 			isa = PBXGroup;
 			children = (
+				AD30F2382C5943050063BA5A /* Style */,
+				AD30F2232C593F400063BA5A /* Little-Lemon-Info.plist */,
+				AD30F2102C593E100063BA5A /* Fonts */,
 				AD30F1CB2C583B410063BA5A /* Assets.xcassets */,
 				AD30F1C92C583B3F0063BA5A /* RootContentView.swift */,
 				AD30F1C72C583B3F0063BA5A /* LittleLemonApp.swift */,
@@ -146,6 +208,9 @@
 				AD30F1F72C5891980063BA5A /* Home.swift */,
 				AD30F1F92C5891CD0063BA5A /* Menu.swift */,
 				AD30F1FB2C5893310063BA5A /* UserProfile.swift */,
+				AD30F20C2C591EDC0063BA5A /* View+PreviewHelper.swift */,
+				AD30F20E2C593A110063BA5A /* AsyncCachedImage.swift */,
+				AD30F23B2C5945760063BA5A /* Header.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -153,9 +218,49 @@
 		AD30F1F22C586A880063BA5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD30F2082C58A22E0063BA5A /* Dish+CoreDataClass.swift */,
+				AD30F2092C58A22E0063BA5A /* Dish+CoreDataProperties.swift */,
+				AD30F1FE2C5899370063BA5A /* FetchedObjects.swift */,
+				AD30F2052C58A0270063BA5A /* LLData.xcdatamodeld */,
+				AD30F23F2C59F6F00063BA5A /* MenuCategory.swift */,
+				AD30F2032C5899B20063BA5A /* MenuItem.swift */,
+				AD30F1FD2C5899370063BA5A /* Persistence.swift */,
 				AD30F1F52C586D910063BA5A /* UserSettings.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AD30F2102C593E100063BA5A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD30F2362C59417D0063BA5A /* Font+Style.swift */,
+				AD30F2132C593F100063BA5A /* Karla-Bold.ttf */,
+				AD30F2192C593F110063BA5A /* Karla-BoldItalic.ttf */,
+				AD30F2182C593F110063BA5A /* Karla-ExtraBold.ttf */,
+				AD30F2172C593F110063BA5A /* Karla-ExtraBoldItalic.ttf */,
+				AD30F2162C593F110063BA5A /* Karla-ExtraLight.ttf */,
+				AD30F2152C593F110063BA5A /* Karla-ExtraLightItalic.ttf */,
+				AD30F21B2C593F110063BA5A /* Karla-Italic.ttf */,
+				AD30F21D2C593F110063BA5A /* Karla-Light.ttf */,
+				AD30F21A2C593F110063BA5A /* Karla-LightItalic.ttf */,
+				AD30F21C2C593F110063BA5A /* Karla-Medium.ttf */,
+				AD30F2142C593F100063BA5A /* Karla-MediumItalic.ttf */,
+				AD30F2112C593F100063BA5A /* Karla-Regular.ttf */,
+				AD30F21E2C593F110063BA5A /* Karla-SemiBold.ttf */,
+				AD30F2122C593F100063BA5A /* Karla-SemiBoldItalic.ttf */,
+				AD30F21F2C593F1D0063BA5A /* MarkaziText-Bold.ttf */,
+				AD30F2202C593F1D0063BA5A /* MarkaziText-Medium.ttf */,
+				AD30F2212C593F1D0063BA5A /* MarkaziText-Regular.ttf */,
+				AD30F2222C593F1D0063BA5A /* MarkaziText-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AD30F2382C5943050063BA5A /* Style */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,8 +367,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD30F2292C593F680063BA5A /* Karla-ExtraLightItalic.ttf in Resources */,
+				AD30F22B2C593F680063BA5A /* Karla-Bold.ttf in Resources */,
+				AD30F2312C593F680063BA5A /* MarkaziText-Bold.ttf in Resources */,
+				AD30F2302C593F680063BA5A /* Karla-Italic.ttf in Resources */,
+				AD30F2242C593F680063BA5A /* MarkaziText-SemiBold.ttf in Resources */,
+				AD30F22D2C593F680063BA5A /* Karla-LightItalic.ttf in Resources */,
+				AD30F2322C593F680063BA5A /* Karla-SemiBold.ttf in Resources */,
+				AD30F22E2C593F680063BA5A /* Karla-MediumItalic.ttf in Resources */,
+				AD30F2262C593F680063BA5A /* MarkaziText-Medium.ttf in Resources */,
 				AD30F1CF2C583B410063BA5A /* Preview Assets.xcassets in Resources */,
+				AD30F2352C593F680063BA5A /* MarkaziText-Regular.ttf in Resources */,
+				AD30F2282C593F680063BA5A /* Karla-ExtraLight.ttf in Resources */,
+				AD30F2342C593F680063BA5A /* Karla-SemiBoldItalic.ttf in Resources */,
 				AD30F1CC2C583B410063BA5A /* Assets.xcassets in Resources */,
+				AD30F2252C593F680063BA5A /* Karla-Light.ttf in Resources */,
+				AD30F22A2C593F680063BA5A /* Karla-Medium.ttf in Resources */,
+				AD30F22F2C593F680063BA5A /* Karla-Regular.ttf in Resources */,
+				AD30F22C2C593F680063BA5A /* Karla-ExtraBold.ttf in Resources */,
+				AD30F2332C593F680063BA5A /* Karla-ExtraBoldItalic.ttf in Resources */,
+				AD30F2272C593F680063BA5A /* Karla-BoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,12 +412,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD30F1FA2C5891CD0063BA5A /* Menu.swift in Sources */,
+				AD30F1FF2C5899370063BA5A /* Persistence.swift in Sources */,
 				AD30F1F42C586BB40063BA5A /* Onboarding.swift in Sources */,
+				AD30F20B2C58A22E0063BA5A /* Dish+CoreDataProperties.swift in Sources */,
+				AD30F2402C59F6F00063BA5A /* MenuCategory.swift in Sources */,
+				AD30F20A2C58A22E0063BA5A /* Dish+CoreDataClass.swift in Sources */,
 				AD30F1FC2C5893310063BA5A /* UserProfile.swift in Sources */,
 				AD30F1F62C586D910063BA5A /* UserSettings.swift in Sources */,
+				AD30F2072C58A0270063BA5A /* LLData.xcdatamodeld in Sources */,
 				AD30F1F82C5891980063BA5A /* Home.swift in Sources */,
+				AD30F2372C59417D0063BA5A /* Font+Style.swift in Sources */,
+				AD30F23C2C5945760063BA5A /* Header.swift in Sources */,
 				AD30F1CA2C583B3F0063BA5A /* RootContentView.swift in Sources */,
 				AD30F1C82C583B3F0063BA5A /* LittleLemonApp.swift in Sources */,
+				AD30F2042C5899B20063BA5A /* MenuItem.swift in Sources */,
+				AD30F2002C5899370063BA5A /* FetchedObjects.swift in Sources */,
+				AD30F20F2C593A110063BA5A /* AsyncCachedImage.swift in Sources */,
+				AD30F20D2C591EDC0063BA5A /* View+PreviewHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,11 +595,11 @@
 				DEVELOPMENT_TEAM = R94MW7P6QY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Little-Lemon-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -490,11 +624,11 @@
 				DEVELOPMENT_TEAM = R94MW7P6QY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Little-Lemon-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -624,6 +758,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AD30F2052C58A0270063BA5A /* LLData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AD30F2062C58A0270063BA5A /* LLData.xcdatamodel */,
+			);
+			currentVersion = AD30F2062C58A0270063BA5A /* LLData.xcdatamodel */;
+			path = LLData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AD30F1BC2C583B3F0063BA5A /* Project object */;
 }
