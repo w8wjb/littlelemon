@@ -15,6 +15,7 @@ import os
 fileprivate let kProfileFirstName = "ll.profile.name.given"
 fileprivate let kProfileLastName = "ll.profile.name.surname"
 fileprivate let kProfileEmail = "ll.profile.email"
+fileprivate let kProfilePhone = "ll.profile.phone"
 fileprivate let kProfileOnboarded = "ll.profile.onboarded"
 
 fileprivate let kProfileImageFile = "profile.png"
@@ -28,6 +29,7 @@ class ProfileModel: ObservableObject {
     @AppStorage(kProfileFirstName) var firstName: String = ""
     @AppStorage(kProfileLastName) var lastName: String = ""
     @AppStorage(kProfileEmail) var email: String = ""
+    @AppStorage(kProfilePhone) var phone: String = ""
     @AppStorage(kProfileOnboarded) var onboarded: Bool = false;
     
     // MARK: - Profile Image
@@ -146,6 +148,7 @@ class ProfileModel: ObservableObject {
         firstName = ""
         lastName = ""
         email = ""
+        phone = ""
         onboarded = false
         
     }

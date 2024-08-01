@@ -27,6 +27,8 @@ struct UserProfile: View {
                 TextField("Last Name", text: $profileModel.lastName)
                 TextField("Email", text: $profileModel.email)
                     .keyboardType(.emailAddress)
+                TextField("Phone", text: $profileModel.phone)
+                    .keyboardType(.phonePad)
             }
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)

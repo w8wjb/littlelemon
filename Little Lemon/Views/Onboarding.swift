@@ -13,6 +13,7 @@ struct Onboarding: View {
     @State var firstName: String = ""
     @State var lastName: String = ""
     @State var email: String = ""
+    @State var phone: String = ""
     
     @EnvironmentObject var profileModel: ProfileModel
     
@@ -20,6 +21,7 @@ struct Onboarding: View {
         return !firstName.isEmpty
         && !lastName.isEmpty
         && email.contains("@")
+        && !phone.isEmpty
     }
     
     
@@ -33,6 +35,9 @@ struct Onboarding: View {
                 TextField("Last Name", text: $lastName)
                 TextField("Email", text: $email)
                     .keyboardType(.emailAddress)
+                TextField("Phone", text: $phone)
+                    .keyboardType(.phonePad)
+
             }
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
@@ -42,6 +47,7 @@ struct Onboarding: View {
                 profileModel.firstName = firstName
                 profileModel.lastName = lastName
                 profileModel.email = email
+                profileModel.phone = phone
                 profileModel.onboarded = true
                 
             }
