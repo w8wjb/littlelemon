@@ -12,16 +12,21 @@ struct LittleLemonApp: App {
     
     let persistence = PersistenceController.shared
 
-    
-    @AppStorage(kCustomerOnboarded) private var customerOnboarded: Bool = false;
+    @StateObject var profileModel = ProfileModel()
     
     var body: some Scene {
         WindowGroup {            
-            if customerOnboarded {
+            if profileModel.onboarded {
                 RootContentView()
+                    .task {
+                        profileModel.loadProfileImage()
+                    }
             } else {
                 Onboarding()
             }
-        }.environment(\.managedObjectContext, persistence.container.viewContext)
+        }
+        .environment(\.managedObjectContext, persistence.container.viewContext)
+        .environmentObject(profileModel)
+        
     }
 }

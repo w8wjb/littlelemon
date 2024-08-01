@@ -13,53 +13,17 @@ struct Menu: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @State var searchText: String = ""
+    @State private var showCancelButton: Bool = false
     
     @State var showSections: Set<MenuCategory> = Set(MenuCategory.allCases)
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading, spacing: 0) {
-                
-                
-                Header()
-                    .padding([.bottom])
-                
-                VStack(alignment: .leading, spacing: 0) {
-                    Text("Little Lemon")
-                        .font(.displayTitle)
-                        .foregroundColor(.primary2)
-                    
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading) {
-                            Text("Grand Rapids")
-                                .font(.subTitle)
-                                .foregroundColor(.white)
-
-                            
-                            Text("We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.")
-                                .fixedSize(horizontal: false, vertical: true)
-                                .font(.leadText)
-                                .foregroundColor(.white)
-                        }
-                        
-                        Image("Hero image")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 100, height: 100)
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
-                            .padding()
-                    }
-                    
-                    TextField("Search", text: $searchText)
-                        .padding([.leading, .trailing], 16)
-                        .padding([.top, .bottom], 8)
-                        .background(.white)
-                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                        .padding([.bottom, .trailing])
-                        
-                }
-                .padding([.leading])
-                .background(Color.primary1)
+        VStack(alignment: .leading) {
+            
+            Hero()
+                .padding(.top)
+            
+            VStack(alignment: .leading) {
                 
                 HStack {
                     Text("ORDER FOR DELIVERY!")
@@ -68,7 +32,29 @@ struct Menu: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 32, height: 32)
-                }.padding()
+                }
+                
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    
+                    TextField("search", text: $searchText, onEditingChanged: { isEditing in
+                        self.showCancelButton = true
+                    }, onCommit: {
+                        print("onCommit")
+                    }).foregroundColor(.primary)
+                    
+                    Button(action: {
+                        self.searchText = ""
+                    }) {
+                        Image(systemName: "xmark.circle.fill").opacity(searchText == "" ? 0 : 1)
+                    }
+                }
+                .padding([.leading, .trailing], 16)
+                .padding([.top, .bottom], 8)
+                .foregroundColor(.secondary)
+                .background(Color(.secondarySystemBackground))
+                .cornerRadius(10.0)
+                
                 
                 HStack {
                     
@@ -84,56 +70,50 @@ struct Menu: View {
                         
                     }
                     
-                }.padding([.leading])
+                }
+            }
+            .padding()
+            
+            List {
                 
-                FetchedObjects(predicate: buildFilterPredicate(), sortDescriptors: buildSortDescriptors()) { (dishes: [Dish]) in
-                    List {
-                        ForEach(dishes, id: \.id) { dish in
-                            HStack(alignment: .top) {
-                                
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text(dish.title ?? "")
-                                    if let desc = dish.desc {
-                                        Text(desc)
-                                            .font(.paragraphText)
-                                            .foregroundColor(.highlightDark)
-                                    }
-                                    
-//                                    Spacer()
-                                    
-                                    Text(dish.price.formatted(.currency(code: "USD")))
-                                }
-                                
-                                Spacer()
-                                
-                                AsyncCachedImage(url: URL(string: dish.image ?? "")) { image in
-                                    image.resizable()
-                                        .frame(width: 100, height: 100)
-                                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                                } placeholder: {
-                                    ProgressView()
-                                        .frame(width: 100, height: 100)
-                                        .clipShape(RoundedRectangle(cornerRadius: 16))
-                                    
+                ForEach(MenuCategory.allCases, id: \.id) { category in
+                    
+                    if showSections.contains(category) {
+                        
+                        Section {
+                            FetchedObjects(
+                                predicate: buildFilterPredicate(category: category),
+                                sortDescriptors: buildSortDescriptors())
+                            { (dishes: [Dish]) in
+                                ForEach(dishes, id: \.id) { dish in
+                                    MenuEntry(dish: dish)
                                 }
                             }
+                        } header: {
+                            HStack {
+                                Text(category.description)
+                                    .font(.subTitle)
+                                    .foregroundColor(.secondary1)
+                            }
+                            .frame(maxWidth: .infinity, maxHeight: 20, alignment: .leading)
                         }
+                        
+                        
                     }
-                    .listStyle(.plain)
                 }
-                .padding(.top, 8)
+                
             }
-            
+            .listStyle(.plain)
             
             
         }.onAppear() {
             
-            // For some reason, loading the data crashes my XCode preview. Works fine in Simulator
+            // For some reason, asynchronously loading the data crashes my XCode preview. Works fine in Simulator
             guard !isRunningInPreview else { return }
             
             Task {
                 do {
-                    try await getMenuData()
+                    try await loadRemoteMenuData()
                 } catch {
                     os_log(.error, "Failed to load menu items: %@", error.localizedDescription)
                 }
@@ -141,10 +121,9 @@ struct Menu: View {
         }
     }
     
-    func buildFilterPredicate() -> NSPredicate {
+    func buildFilterPredicate(category: MenuCategory) -> NSPredicate {
         
-        let categories = showSections.map { $0.rawValue }
-        let categoriesPredicate = NSPredicate(format: "category in %@", categories)
+        let categoriesPredicate = NSPredicate(format: "category == %@", category.rawValue)
         
         if searchText.isEmpty {
             return categoriesPredicate
@@ -162,7 +141,7 @@ struct Menu: View {
         ]
     }
     
-    func getMenuData() async throws {
+    func loadRemoteMenuData() async throws {
         
         let request = URLRequest(url: MenuItem.sourceURL)
         
@@ -181,20 +160,14 @@ struct Menu: View {
         try Dish.removeAll(inContext: viewContext)
         
         for menuItem in menuItems {
-            
-            let newDish = Dish(context: viewContext)
-            newDish.title = menuItem.title
-            newDish.price = menuItem.price
-            newDish.desc = menuItem.desc
-            newDish.category = menuItem.category
-            newDish.image = menuItem.image
-            
+            let _ = menuItem.createDish(inContext: viewContext)
         }
         
         try viewContext.save()
         os_log(.debug, "Loaded %d menu items", menuItems.count)
         
     }
+    
     
 }
 

@@ -63,3 +63,23 @@ extension Dish {
 extension Dish : Identifiable {
 
 }
+
+extension Dish: DishProtocol {
+    
+}
+
+protocol DishProtocol {    
+    var title: String? { get }
+    var image: String? { get }
+    var price: Double { get }
+    var desc: String? { get }
+    var category: String? { get }
+}
+
+struct PreviewDish: DishProtocol {
+    let title: String?
+    let image: String?
+    let price: Double
+    let desc: String?
+    let category: String?
+}

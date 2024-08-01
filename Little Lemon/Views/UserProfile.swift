@@ -6,26 +6,26 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct UserProfile: View {
     
-    @AppStorage(kCustomerFirstName) var customerFirstName: String = ""
-    @AppStorage(kCustomerLastName) var customerLastName: String = ""
-    @AppStorage(kCustomerEmail) var customerEmail: String = ""
-    @AppStorage(kCustomerOnboarded) var customerOnboarded: Bool = false;
+    @EnvironmentObject var profileModel: ProfileModel
+    
+    @State var picEditSheet = false
     
     var body: some View {
         VStack {
             Text("Personal information")
-            Image(systemName: "person.circle.fill")
-                .resizable()
-                .frame(width: 200, height: 200)
-                .mask(Circle())
+                .font(.subTitle)
+                .foregroundColor(.primary1)
+            
+            EditableCircularProfileImage(viewModel: profileModel)
             
             Group {
-                TextField("First Name", text: $customerFirstName)
-                TextField("Last Name", text: $customerLastName)
-                TextField("Email", text: $customerEmail)
+                TextField("First Name", text: $profileModel.firstName)
+                TextField("Last Name", text: $profileModel.lastName)
+                TextField("Email", text: $profileModel.email)
                     .keyboardType(.emailAddress)
             }
             .autocorrectionDisabled()
@@ -35,11 +35,8 @@ struct UserProfile: View {
             Spacer()
             Button("Logout") {
                 
-                customerFirstName = ""
-                customerLastName = ""
-                customerEmail = ""
-                customerOnboarded = false
-                
+                profileModel.clear()
+
             }
             .buttonStyle(.bordered)
 

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct MenuItem: Decodable, CustomStringConvertible {
     
@@ -38,6 +39,16 @@ struct MenuItem: Decodable, CustomStringConvertible {
         self.price = try container.decode(Double.self, forKey: .price)
         self.desc = try container.decode(String.self, forKey: .description)
         self.category = try container.decode(String.self, forKey: .category)
+    }
+    
+    func createDish(inContext context: NSManagedObjectContext) -> Dish {
+        let newDish = Dish(context: context)
+        newDish.title = self.title
+        newDish.price = self.price
+        newDish.desc = self.desc
+        newDish.category = self.category
+        newDish.image = self.image
+        return newDish
     }
 
     

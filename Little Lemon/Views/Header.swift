@@ -12,9 +12,10 @@ struct Header: View {
         ZStack(alignment: .trailing) {
             Image("Logo")
                 .frame(maxWidth: .infinity, alignment: .center)
+                .background(.white)
             Image(systemName: "person.circle.fill")
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 40, height: 40)
                 .mask(Circle())
                 .padding([.trailing])
 

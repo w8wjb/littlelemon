@@ -14,12 +14,8 @@ struct Onboarding: View {
     @State var lastName: String = ""
     @State var email: String = ""
     
-    @AppStorage(kCustomerFirstName) var customerFirstName: String = ""
-    @AppStorage(kCustomerLastName) var customerLastName: String = ""
-    @AppStorage(kCustomerEmail) var customerEmail: String = ""
-    @AppStorage(kCustomerOnboarded) var customerOnboarded: Bool = false;
+    @EnvironmentObject var profileModel: ProfileModel
     
-
     var isFormValid: Bool {
         return !firstName.isEmpty
         && !lastName.isEmpty
@@ -30,7 +26,9 @@ struct Onboarding: View {
     var body: some View {
         VStack {
             
-            Group {
+            Hero()
+            
+            Form {
                 TextField("First Name", text: $firstName)
                 TextField("Last Name", text: $lastName)
                 TextField("Email", text: $email)
@@ -38,22 +36,22 @@ struct Onboarding: View {
             }
             .autocorrectionDisabled()
             .textInputAutocapitalization(.never)
-            .textFieldStyle(.roundedBorder)
-
-
             
             Button("Register") {
                 
-                customerFirstName = firstName
-                customerLastName = lastName
-                customerEmail = email
-                customerOnboarded = true
+                profileModel.firstName = firstName
+                profileModel.lastName = lastName
+                profileModel.email = email
+                profileModel.onboarded = true
                 
             }
             .buttonStyle(.borderedProminent)
             .disabled(!isFormValid)
+            
+            Spacer()
         }
-        .padding()
+        .background(Color(.secondarySystemBackground))
+        
     }
 }
 
