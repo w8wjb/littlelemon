@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import os
 
 struct DishDetail: View {
     
-    let dish: DishProtocol
+    let dish: Dish
     
-    @State var desiredAmount = 1
+    @EnvironmentObject var orderModel: OrderModel
+    
+    @Environment(\.managedObjectContext) private var viewContext
+    
+    @EnvironmentObject private var nav: NavigationStateManager
+    
+    @State var desiredQuantity = 1
     
     var body: some View {
         ScrollView {
@@ -49,18 +56,27 @@ struct DishDetail: View {
                 
                 HStack {
                     
-                    Stepper("", value: $desiredAmount).onChange(of: desiredAmount) { oldValue, newValue in
+                    Stepper("", value: $desiredQuantity).onChange(of: desiredQuantity) { oldValue, newValue in
                         if newValue < 1 {
-                            desiredAmount = 1
+                            desiredQuantity = 1
                         }
                     }.fixedSize()
                     
-                    Text(desiredAmount, format: .number)
+                    Text(desiredQuantity, format: .number)
                         .font(.subTitle).bold()
                         .frame(width: 20)
                         .padding()
-                        
+                    
                     Button("Add to Cart") {
+                        
+                        do {
+                            try orderModel.addDish(dish, quantity: desiredQuantity, inContext: viewContext)
+                            nav.switchToOrder()
+                            
+                        } catch {
+                            os_log(.error, "Failed to add add dish to order: %@", error.localizedDescription)
+                        }
+                        
                         
                     }
                     .buttonStyle(.borderedProminent)
@@ -69,15 +85,37 @@ struct DishDetail: View {
                     
                 }.frame(maxWidth: .infinity)
                 
-            }
+            } .padding(.top)
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbarBackground(.white, for: .navigationBar)
+                .toolbar(content: {
+                    ToolbarItem(placement: .principal) {
+                        VStack {
+                            Image("Logo")
+                        }
+                    }
+                    
+                    
+                    ToolbarItem(placement: .topBarTrailing) {
+                        NavigationLink(value: NavDestination.order) {
+                            Image(systemName: "cart.circle.fill")
+                                .resizable()
+                                .frame(width: 40, height: 40)
+                                .mask(Circle())
+                                .padding()
+                        }
+                    }
+                    
+                    
+                })
         }
     }
 }
-
-#Preview {
-    DishDetail(dish: PreviewDish(title: "Greek Salad",
-                                 image: "https://www.w8wjb.com/littlelemon/images/food-greek-salad.jpg",
-                                 price: 10.0,
-                                 desc: "Crisp cucumbers, juicy tomatoes, tangy olives, and creamy feta cheese, all dressed in a zesty vinaigrette.",
-                                 category: "starters"))
-}
+//
+//#Preview {
+//    DishDetail(dish: PreviewDish(title: "Greek Salad",
+//                                 image: "https://www.w8wjb.com/littlelemon/images/food-greek-salad.jpg",
+//                                 price: 10.0,
+//                                 desc: "Crisp cucumbers, juicy tomatoes, tangy olives, and creamy feta cheese, all dressed in a zesty vinaigrette.",
+//                                 category: "starters"))
+//}

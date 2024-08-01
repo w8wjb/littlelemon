@@ -13,6 +13,7 @@ struct LittleLemonApp: App {
     let persistence = PersistenceController.shared
 
     @StateObject var profileModel = ProfileModel()
+    @StateObject var orderModel = OrderModel()
     
     var body: some Scene {
         WindowGroup {            
@@ -27,6 +28,7 @@ struct LittleLemonApp: App {
         }
         .environment(\.managedObjectContext, persistence.container.viewContext)
         .environmentObject(profileModel)
+        .environmentObject(orderModel)
         
     }
 }

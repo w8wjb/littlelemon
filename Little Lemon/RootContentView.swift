@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct RootContentView: View {
+    
+    @StateObject var nav = NavigationStateManager()
+    
     var body: some View {
        Home()
+            .environmentObject(nav)
     }
 }
 

@@ -9,37 +9,11 @@ import SwiftUI
 
 struct MenuEntry: View {
 
-    var dish: DishProtocol
+    var dish: Dish
     
     var body: some View {
                 
-        NavigationLink {
-            DishDetail(dish: dish)
-                .padding(.top)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(.white, for: .navigationBar)
-                .toolbar(content: {
-                    ToolbarItem(placement: .principal) {
-                        VStack {
-                            Image("Logo")
-                        }
-                    }
-
-                    
-                    ToolbarItem(placement: .topBarTrailing) {
-                        NavigationLink(destination: Cart()) {
-                            Image(systemName: "cart.circle.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .mask(Circle())
-                                .padding()
-                        }
-                    }
-                    
-                    
-                })
-
-        } label: {
+        NavigationLink(value: NavDestination.dishDetail(dish)) {
             HStack(alignment: .top) {
                 
                 VStack(alignment: .leading, spacing: 4) {
@@ -74,10 +48,10 @@ struct MenuEntry: View {
     }
 }
 
-#Preview {
-    MenuEntry(dish: PreviewDish(title: "Greek Salad",
-                                image: "https://www.w8wjb.com/littlelemon/images/food-greek-salad.jpg",
-                                price: 10.0,
-                                desc: "Crisp cucumbers, juicy tomatoes, tangy olives, and creamy feta cheese, all dressed in a zesty vinaigrette.",
-                                category: "starters"))
-}
+//#Preview {
+//    MenuEntry(dish: PreviewDish(title: "Greek Salad",
+//                                image: "https://www.w8wjb.com/littlelemon/images/food-greek-salad.jpg",
+//                                price: 10.0,
+//                                desc: "Crisp cucumbers, juicy tomatoes, tangy olives, and creamy feta cheese, all dressed in a zesty vinaigrette.",
+//                                category: "starters"))
+//}
