@@ -185,7 +185,6 @@
 		AD30F1C62C583B3F0063BA5A /* Little Lemon */ = {
 			isa = PBXGroup;
 			children = (
-				AD30F2382C5943050063BA5A /* Style */,
 				AD30F2232C593F400063BA5A /* Little-Lemon-Info.plist */,
 				AD30F2102C593E100063BA5A /* Fonts */,
 				AD30F1CB2C583B410063BA5A /* Assets.xcassets */,
@@ -287,13 +286,6 @@
 				AD30F2222C593F1D0063BA5A /* MarkaziText-SemiBold.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		AD30F2382C5943050063BA5A /* Style */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
